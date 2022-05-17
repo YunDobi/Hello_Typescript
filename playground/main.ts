@@ -62,13 +62,15 @@
 // point.y = 2;
 // point.draw();
 
-type PlayerSet = {
-  name: string,
-  age?: number
-}
+// type PlayerSet = {
+//   readonly name: string,
+//   age?: number
+// }
 
-const playerMaker = (name: string) : PlayerSet => ({name})
-const yun = playerMaker("Yun")
-yun.age = 12
+// const playerMaker = (name: string) : PlayerSet => ({name})
+// const yun = playerMaker("Yun")
+// yun.age = 12
+// yun.name = "d"
 
-console.log(yun)
+// console.log(yun)
+const player : [string, number, boolean] = ["yun", 12, true]
