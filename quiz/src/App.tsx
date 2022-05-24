@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.css';
+import { GlobalStyle, Wrapper } from './App.style';
 import QuestionCard from './components/Questions';
 import { fetchQuestions } from './API';
 import { Difficulty, QuestionState } from './API';
@@ -71,7 +71,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <>
+    <GlobalStyle />
+    <Wrapper>
       <h1>React Quiz</h1>
       {gameOver || userAnswer.length === Total_Questions ? (
         <button className='start' onClick={startTrivia}>
@@ -90,7 +92,8 @@ function App() {
         callback={checkAnswer} />
       )}
       {!gameOver && !loading && userAnswer.length === number + 1 && number !== Total_Questions - 1 ? (<button className='next' onClick={nextQuestion}>next Question</button>) : null}
-    </div>
+    </Wrapper>
+    </>
   );
 }
 
